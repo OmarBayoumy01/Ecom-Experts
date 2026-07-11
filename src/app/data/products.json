@@ -1,0 +1,138 @@
+[
+  {
+    "id": "cam-v4",
+    "category": "cameras",
+    "name": "Wyze Cam v4",
+    "description": "The clearest Wyze Cam ever made.",
+    "image": "/products/cam-v4.png",
+    "icon": "Cctv",
+    "colors": ["White", "Grey", "Black"],
+    "colorImages": {
+      "White": "/products/cam-v4-white.png",
+      "Grey": "/products/cam-v4-grey.png",
+      "Black": "/products/cam-v4-black.png"
+    },
+    "save": 22,
+    "unitOrig": 35.98,
+    "unitSale": 27.98,
+    "defaultQty": 1
+  },
+  {
+    "id": "pan-v3",
+    "category": "cameras",
+    "name": "Wyze Cam Pan v3",
+    "description": "360° pan and 180° tilt security camera.",
+    "image": "/products/pan-v3.png",
+    "icon": "Video",
+    "colors": ["White", "Black"],
+    "colorImages": {
+      "White": "/products/pan-v3-white.png",
+      "Black": "/products/pan-v3-black.png"
+    },
+    "save": 12,
+    "unitOrig": 39.98,
+    "unitSale": 34.98,
+    "defaultQty": 2
+  },
+  {
+    "id": "floodlight",
+    "category": "cameras",
+    "name": "Wyze Cam Floodlight v2",
+    "description": "2K floodlight camera with a 160° wide-angle view for your garage.",
+    "image": "/products/floodlight.png",
+    "icon": "Lightbulb",
+    "colors": ["White", "Black"],
+    "colorImages": {
+      "White": "/products/floodlight-white.png",
+      "Black": "/products/floodlight-black.png"
+    },
+    "save": 22,
+    "unitOrig": 89.98,
+    "unitSale": 69.98,
+    "defaultQty": 0
+  },
+  {
+    "id": "doorbell",
+    "category": "cameras",
+    "name": "Wyze Duo Cam Doorbell",
+    "description": "Two cameras. Two views. Double the porch protection.",
+    "image": "/products/doorbell.png",
+    "icon": "Bell",
+    "unitOrig": 69.98,
+    "unitSale": 69.98,
+    "defaultQty": 0
+  },
+  {
+    "id": "battery-pro",
+    "category": "cameras",
+    "name": "Wyze Battery Cam Pro",
+    "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet or electrician needed.",
+    "image": "/products/battery-pro.png",
+    "icon": "BatteryFull",
+    "colors": ["White", "Black"],
+    "colorImages": {
+      "White": "/products/battery-pro-white.png",
+      "Black": "/products/battery-pro-black.png"
+    },
+    "unitOrig": 89.98,
+    "unitSale": 89.98,
+    "defaultQty": 0
+  },
+  {
+    "id": "motion",
+    "category": "sensors",
+    "name": "Wyze Sense Motion Sensor",
+    "description": "Detects motion to trigger alerts and automations.",
+    "image": "/products/motion.png",
+    "icon": "Radar",
+    "unitOrig": 29.99,
+    "unitSale": 29.99,
+    "defaultQty": 2
+  },
+  {
+    "id": "hub",
+    "category": "sensors",
+    "name": "Wyze Sense Hub (Required)",
+    "description": "The base station that connects all your sensors.",
+    "image": "/products/hub.png",
+    "icon": "Router",
+    "unitOrig": 29.92,
+    "unitSale": 0,
+    "required": true,
+    "defaultQty": 1
+  },
+  {
+    "id": "microsd",
+    "category": "accessories",
+    "name": "Wyze MicroSD Card (256GB)",
+    "description": "Local storage for continuous recording and playback.",
+    "image": "/products/microsd.png",
+    "icon": "MemoryStick",
+    "unitOrig": 20.98,
+    "unitSale": 20.98,
+    "defaultQty": 2
+  },
+  {
+    "id": "cam-unlimited",
+    "category": "plan",
+    "name": "Cam",
+    "nameAccent": "Unlimited",
+    "description": "Unlimited cloud recording for all your cameras.",
+    "image": "/products/cam-unlimited.png",
+    "icon": "ShieldCheck",
+    "unitOrig": 12.99,
+    "unitSale": 9.99,
+    "monthly": true,
+    "defaultQty": 1
+  },
+  {
+    "id": "fast-shipping",
+    "category": "plan",
+    "name": "Fast Shipping",
+    "description": "Get your system delivered faster, on us.",
+    "icon": "Truck",
+    "unitOrig": 5.99,
+    "unitSale": 0,
+    "defaultQty": 1
+  }
+]

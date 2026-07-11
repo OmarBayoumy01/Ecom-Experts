@@ -9,7 +9,7 @@ import { ThemeProvider } from '@/providers/theme-provider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <Suspense fallback={<PageLoader fullScreen />}>
         <RouterProvider router={router} />
       </Suspense>
