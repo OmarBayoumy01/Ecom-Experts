@@ -8,6 +8,8 @@ The shopper assembles a system through a 4-step accordion (cameras → plan → 
 extra protection); the review panel ("Your security system") reflects every selection
 live, recalculates the total, and can be saved for later.
 
+**Live demo:** https://ecom-experts-seven.vercel.app/dashboard
+
 ## Prerequisites
 
 - **Node.js 20.19+ or 22.12+** (Node 24 recommended) — check with `node -v`
