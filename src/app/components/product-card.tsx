@@ -118,7 +118,9 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                     )}
                   />
                 )}
-                <span className="text-[10px] leading-none tracking-[0.6px] whitespace-nowrap text-[#1f1f1f] dark:text-[#f0f4f7]">
+                <span
+                  className={`text-[10px] leading-none tracking-[0.6px] whitespace-nowrap ${active ? 'text-[#1f1f1f] dark:text-[#f0f4f7]' : ''} `}
+                >
                   {c}
                 </span>
               </button>

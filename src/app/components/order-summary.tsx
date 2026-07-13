@@ -152,8 +152,17 @@ export const OrderSummary = () => {
                 {categoryLabels[group.category]}
               </p>
               <div className="space-y-3">
-                {group.lines.map((line) => (
-                  <SummaryLine key={line.key} line={line} />
+                {group.lines.map((line, i) => (
+                  <div
+                    key={line.key}
+                    className={cn(
+                      group.category === 'plan' &&
+                        i > 0 &&
+                        'border-t border-[#ced6de] pt-3',
+                    )}
+                  >
+                    <SummaryLine line={line} />
+                  </div>
                 ))}
               </div>
             </div>
@@ -200,7 +209,13 @@ export const OrderSummary = () => {
           Congrats! You’re saving {money(savings)} on your security bundle!
         </p>
 
-        <Button size="lg" className="mt-4 h-12 w-full text-base font-semibold">
+        <Button
+          size="lg"
+          className="mt-4 h-12 w-full text-base font-semibold"
+          onClick={() =>
+            notify.success(`Order placed — ${money(sale)} total. Thank you!`)
+          }
+        >
           Checkout
         </Button>
 
