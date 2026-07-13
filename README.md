@@ -20,7 +20,7 @@ live, recalculates the total, and can be saved for later.
 
 ```bash
 git clone <repository-url>
-cd blue-print
+cd Ecom-Experts
 npm install
 npm run dev
 ```
@@ -97,7 +97,7 @@ src/app/
   from the Figma file. Product images and the satisfaction badge are the real exported
   assets, served from `public/products/`.
 - **Data is a local JSON file.** Per the brief, a local JSON source is fine; there's no
-  backend (the bonus). `icon` fields store lucide icon *names* (JSON can't hold a
+  backend (the bonus). `icon` fields store lucide icon _names_ (JSON can't hold a
   component); they're a fallback for the few items without a photo.
 - **Checkout** is a placeholder (no destination), as allowed by the brief.
 - **Persistence is explicit** (on Save click), not autosave — matching the "configure →
@@ -107,4 +107,3 @@ src/app/
 - **Known nice-to-haves not done:** the colour chips use solid swatches rather than the
   tiny product thumbnails in the design, and a couple of type sizes are marginally smaller
   than the 28px headings in Figma.
-```
