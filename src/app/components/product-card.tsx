@@ -40,23 +40,21 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Card
       className={cn(
-        'relative gap-2 border-2 p-3 shadow-none ring-0',
-        // A selected card (any variant chosen) gets the purple border.
+        ' gap-2 border-2 p-3 shadow-none ring-0 min-h-82.5 flex flex-col justify-between',
         chosen ? 'border-[rgba(78,47,210,0.7)]' : 'border-transparent',
       )}
     >
-      {product.save ? (
-        <Badge className="absolute top-3 left-3 z-10">
-          Save {product.save}%
-        </Badge>
-      ) : null}
-
-      <div className="flex h-20 items-center justify-center overflow-hidden rounded-lg bg-white">
+      <div className="relative flex h-30 w-full items-center justify-center overflow-hidden rounded-lg bg-white">
         {product.image ? (
           <img
             src={product.image}
             alt={product.name}
-            className="h-full w-full scale-125 object-contain"
+            className={cn(
+              'object-contain',
+              product.imageClassName
+                ? 'h-full w-full'
+                : 'h-full w-full scale-125',
+            )}
           />
         ) : (
           <Icon
@@ -64,17 +62,20 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             strokeWidth={1.5}
           />
         )}
+        {product.save ? (
+          <Badge className="absolute top-3 left-0 z-10">
+            Save {product.save}%
+          </Badge>
+        ) : null}
       </div>
 
-      <div>
-        <h3 className="text-sm font-bold">
-          {product.name}
-          {product.nameAccent && (
-            <span className="text-primary"> {product.nameAccent}</span>
-          )}
+      <div className="space-y-2">
+        <h3>
+          <span>{product.name}</span>
+          {product.nameAccent && <span> {product.nameAccent}</span>}
         </h3>
         {product.description && (
-          <p className="text-muted-foreground mt-1 text-xs leading-snug">
+          <p className="text-muted-foreground">
             {product.description}{' '}
             <a
               href="#"
@@ -87,7 +88,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       </div>
 
       {product.colors && product.colors.length > 0 && (
-        <div className="mt-auto flex flex-nowrap gap-1.5">
+        <div className="flex flex-nowrap gap-1.5 mt-auto">
           {product.colors.map((c) => {
             const active = variant === c
             const chipImage = product.colorImages?.[c] ?? product.image
@@ -97,7 +98,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                 type="button"
                 onClick={() => setVariant(c)}
                 className={cn(
-                  'flex h-[26px] shrink-0 items-center justify-center gap-1 rounded-[2px] border-[0.5px] px-1.5 text-[10px] leading-none tracking-[0.6px] whitespace-nowrap text-[#1f1f1f]',
+                  'flex h-[26px] w-[60px] shrink-0 items-center justify-center gap-1 rounded-[2px] border-[0.5px] px-1.5 text-[10px] leading-none tracking-[0.6px] whitespace-nowrap text-[#1f1f1f]',
                   active
                     ? 'border-[#0aa288] bg-[rgba(29,240,187,0.04)]'
                     : 'border-[#ccc] bg-white',
@@ -107,24 +108,26 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                   <img
                     src={chipImage}
                     alt=""
-                    className="size-[22px] shrink-0 rounded-[5px] object-contain"
+                    className="size-[15px] shrink-0 rounded-[5px] object-contain"
                   />
                 ) : (
                   <span
                     className={cn(
-                      'size-[22px] shrink-0 rounded-[5px] border',
+                      'size-[15px] shrink-0 rounded-[5px] border',
                       swatchColor[c] ?? 'border-neutral-300 bg-neutral-300',
                     )}
                   />
                 )}
-                <span>{c}</span>
+                <span className="text-[10px] leading-none tracking-[0.6px] whitespace-nowrap text-[#1f1f1f] dark:text-[#f0f4f7]">
+                  {c}
+                </span>
               </button>
             )
           })}
         </div>
       )}
 
-      <div className="mt-auto flex items-end justify-between gap-2 pt-1">
+      <div className="flex flex-wrap items-center gap-2 pt-1">
         <div className="flex shrink-0 items-center gap-2.5 py-1">
           <button
             type="button"
@@ -142,7 +145,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           >
             <Minus className="size-2.5 text-[#0b0d10]" strokeWidth={2.5} />
           </button>
-          <span className="text-base leading-5 font-medium text-[#0b0d10]">
+          <span className="text-base leading-5 font-medium text-[#0b0d10] dark:text-[#f0f4f7]">
             {qty}
           </span>
           <button
@@ -158,7 +161,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           </button>
         </div>
 
-        <div className="flex shrink-0 items-center gap-1 text-base whitespace-nowrap">
+        <div className="ml-auto flex shrink-0 items-center gap-1 text-base whitespace-nowrap">
           {showOrig && (
             <span className="text-[#d8392b] line-through">
               {money(product.unitOrig)}

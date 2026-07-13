@@ -65,7 +65,7 @@ export const DashboardController = () => {
   const goBack = () => setCurrent((c) => Math.max(c - 1, 0))
 
   return (
-    <div className="mx-auto w-full max-w-7xl overflow-x-hidden p-4">
+    <div className="mx-auto w-full max-w-7xl overflow-x-hidden md:p-4">
       <Accordion
         type="single"
         value={steps[current].id}
@@ -109,13 +109,13 @@ export const DashboardController = () => {
               </AccordionTrigger>
 
               <AccordionContent className="h-auto px-2 pb-1">
-                <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4">
+                <div className="grid grid-cols-[repeat(auto-fill,minmax(225px,1fr))] gap-4">
                   {items.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>
 
-                <div className="mt-5 flex items-center justify-center gap-3">
+                <div className="my-3 flex items-center justify-center gap-3">
                   {index > 0 && (
                     <Button variant="ghost" onClick={goBack}>
                       Back
@@ -123,7 +123,7 @@ export const DashboardController = () => {
                   )}
                   <Button
                     variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    className="border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground rounded-md min-w-[266px] cursor-pointer"
                     onClick={index === steps.length - 1 ? undefined : goNext}
                   >
                     {step.nextLabel}

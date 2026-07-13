@@ -12,7 +12,7 @@ const AppLayout = () => {
           </div>
         </div>
       </header>
-      <main className="mx-auto max-w-360 p-6">
+      <main className="md:mx-auto md:max-w-360 md:p-6">
         <Outlet />
       </main>
     </div>

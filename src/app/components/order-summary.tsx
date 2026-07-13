@@ -42,7 +42,10 @@ const SummaryLine = ({ line }: { line: SelectedLine }) => {
           <img
             src={product.image}
             alt={product.name}
-            className="size-full object-contain"
+            className={cn(
+              'object-contain',
+              product.imageClassName ?? 'size-full',
+            )}
           />
         ) : (
           <Icon className="text-muted-foreground size-5" strokeWidth={1.75} />
@@ -54,9 +57,7 @@ const SummaryLine = ({ line }: { line: SelectedLine }) => {
         {product.nameAccent && (
           <span className="text-primary font-bold"> {product.nameAccent}</span>
         )}
-        {variant && (
-          <span className="text-muted-foreground"> · {variant}</span>
-        )}
+        {variant && <span className="text-muted-foreground"> · {variant}</span>}
       </span>
 
       <div className="flex shrink-0 items-center gap-2 sm:gap-3">
@@ -143,7 +144,10 @@ export const OrderSummary = () => {
 
         <div className="mt-5 space-y-5">
           {visibleGroups.map((group) => (
-            <div key={group.category} className="border-t border-[#ced6de] pt-4">
+            <div
+              key={group.category}
+              className="border-t border-[#ced6de] pt-4"
+            >
               <p className="mb-2 text-[11px] font-medium tracking-wider text-[#a8b2bd] uppercase">
                 {categoryLabels[group.category]}
               </p>
@@ -159,13 +163,13 @@ export const OrderSummary = () => {
 
       {/* Right — guarantee + checkout */}
       <div>
-        <div className="flex items-start gap-5">
+        <div className=" gap-5 hidden md:flex">
           <img
             src="/products/satisfaction-badge.png"
             alt="100% Wyze satisfaction guarantee"
             className="size-28 shrink-0 object-contain"
           />
-          <div>
+          <div className="">
             <h3 className="text-lg font-bold">30-day hassle-free returns</h3>
             <p className="text-muted-foreground mt-1 text-sm">
               If you’re not totally in love with the product, we will refund you
@@ -173,20 +177,26 @@ export const OrderSummary = () => {
             </p>
           </div>
         </div>
-
-        <div className="mt-6 flex items-center justify-between">
-          <Badge className="rounded-md">as low as $19.19/mo</Badge>
-          <div className="flex items-center gap-2">
-            <span className="text-muted-foreground text-lg line-through">
-              {money(orig)}
-            </span>
-            <span className="text-primary text-2xl font-bold">
-              {money(sale)}
-            </span>
+        <div className="flex md:block justify-between">
+          <img
+            src="/products/satisfaction-badge.png"
+            alt="100% Wyze satisfaction guarantee"
+            className="size-28 shrink-0 object-contain md:hidden"
+          />
+          <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-2">
+            <Badge className="rounded-md">as low as $19.19/mo</Badge>
+            <div className="flex items-center gap-2">
+              <span className="text-muted-foreground text-lg line-through">
+                {money(orig)}
+              </span>
+              <span className="text-primary text-2xl font-bold">
+                {money(sale)}
+              </span>
+            </div>
           </div>
         </div>
 
-        <p className="mt-2 text-right text-sm font-medium text-green-600">
+        <p className=" mt-2 text-center md:text-right text-sm font-medium text-green-600">
           Congrats! You’re saving {money(savings)} on your security bundle!
         </p>
 

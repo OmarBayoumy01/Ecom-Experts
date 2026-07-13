@@ -24,6 +24,8 @@ export type Product = {
   description?: string
   /** Path to the real product photo (served from /public). Falls back to `icon`. */
   image?: string
+  /** Optional per-product override for the image's sizing classes. */
+  imageClassName?: string
   icon: LucideIcon
   colors?: string[]
   /** Per-color thumbnail photos shown inside each color chip. */
